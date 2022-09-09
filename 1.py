@@ -16,15 +16,14 @@ print("3", A3, "|", B3, "|", C3, " ")
 
 list = {"A1":A1, "B1":B1, "C1":C1, "A2":A2, "B2":B2, "C2":C2, "A3":A3, "B3":B3, "C3":C3}
 
-def first_move(add_something):
-    if list[add_something] == "_":
-         list[add_something] = X
-     else:
-        if list[add_something] == O:
-            first_move()
+def first_move(XO):
+    for i in list:
+        move1 = str(input("Игрок1, введите букву и цифру (в формате B1): "))
+        list[move1] = X
         print(" ", "A", " ", "B", " ", "C", " ")
         print("1", list["A1"], "|", list["B1"], "|", list["C1"], " ")
         print("2", list["A2"], "|", list["B2"], "|", list["C2"], " ")
         print("3", list["A3"], "|", list["B3"], "|", list["C3"], " ")
-move1 = str(input("Ваш ход .."))
-first_move(move1)
+
+list[move1] = str(input("Игрок1, ваш ход: "))
+first_move(list[move1])
