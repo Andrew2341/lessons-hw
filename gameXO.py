@@ -35,7 +35,6 @@ for i in list:
 
 
 
-
     if list["A1"] == O and list["B1"] == O and list["C1"] == O:
         print('игра окончена, победил Игрок2')
     elif list["A2"] == O and list["B2"] == O and list["C2"] == O:

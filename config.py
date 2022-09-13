@@ -1,15 +1,15 @@
 import json
 
+data = {
+    "name": "app1",
+    "version": "0,01"
+}
+data_json = json.dumps(data)
 
-def write(data, filename):
-    data = json.dumps(data)
-    data = json.loads(str(data))
-    with open(filename, "w") as file:
-        json.dump(data, file, indent = 4)
-
-def read(filename):
-    with open(filename, "r") as file:
-        return json.load(file)
-
-print(read("config.json"))
-input()
+with open('config.json', 'w') as file:
+    file.write(data_json)
+with open ("config.json", "r") as file:
+    # data_json = file.read()
+    data = json.load(file)
+# data = json.loads(data_json)
+print(data["name"])
